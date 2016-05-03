@@ -1,4 +1,5 @@
-VM='MV_1'
+#!/bin/bash
+VM='MV_4'
 VBoxManage createhd --filename $VM.vdi --size 32768
 VBoxManage createvm --name $VM --ostype "Ubuntu_64" --register
 VBoxManage storagectl $VM --name "SATA Controller" --add sata \ --controller IntelAHCI
@@ -9,3 +10,4 @@ VBoxManage modifyvm $VM --ioapic on
 VBoxManage modifyvm $VM --boot1 dvd --boot2 disk --boot3 none --boot4 none
 VBoxManage modifyvm $VM --memory 1024 --vram 128
 VBoxManage modifyvm $VM --nic1 bridged --bridgeadapter1 e1000g0
+
